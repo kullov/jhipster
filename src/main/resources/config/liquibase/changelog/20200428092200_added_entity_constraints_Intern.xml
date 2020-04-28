@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!--
+        Added the constraints for entity Intern.
+    -->
+    <changeSet id="20200428092200-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="intern_id"
+                                 baseTableName="intern_intern_ability"
+                                 constraintName="fk_intern_intern_ability_intern_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="intern"/>
+
+        <addForeignKeyConstraint baseColumnNames="intern_ability_id"
+                                 baseTableName="intern_intern_ability"
+                                 constraintName="fk_intern_intern_ability_intern_ability_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ability"/>
+        
+        <addForeignKeyConstraint baseColumnNames="organization_intern_id"
+                                 baseTableName="intern"
+                                 constraintName="fk_intern_organization_intern_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="organization"/>
+
+    </changeSet>
+</databaseChangeLog>

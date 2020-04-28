@@ -1,0 +1,72 @@
+{
+    "name": "Organization",
+    "fields": [
+        {
+            "fieldName": "employeeCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "grossRevenue",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "taxNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "password",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contact",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "request",
+            "otherEntityRelationshipName": "organizationRequest",
+            "relationshipName": "request"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "intern",
+            "otherEntityRelationshipName": "organizationIntern",
+            "relationshipName": "intern"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "requestAssignment",
+            "otherEntityRelationshipName": "organizationRequestAssignment",
+            "relationshipName": "requestAssignment"
+        }
+    ],
+    "changelogDate": "20200428092100",
+    "entityTableName": "organization",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

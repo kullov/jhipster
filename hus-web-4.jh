@@ -1,5 +1,3 @@
-
-
 entity Organization {
 	employeeCount Integer,
 	grossRevenue String,
@@ -71,23 +69,20 @@ entity Status {
 }
 
 relationship OneToMany {
-	Organization to Request{organization(name)}
+	Organization to Request{organizationRequest(name)}
     Intern to RegisterRequest{internRegister(code)}
     Request to RegisterRequest{requestRegister(position)}
-    Organization to Intern{organization}
+    Organization to Intern{organizationIntern}
     AbilityCategory{abilityType(name)} to Ability{type(name)}
-    Intern to RequestAssignment{intern(code)}
-    Organization to RequestAssignment{organization(name)}
+    Intern to RequestAssignment{internRequestAssignment(code)}
+    Organization to RequestAssignment{organizationRequestAssignment(name)}
+	Status to Request{requestStatus(name)}
+    Status to RequestAssignment{status(name)}
 }
 
 relationship ManyToMany {
 	Intern{internAbility(name)} to Ability{intern}
     Request{requestAbility(name)} to Ability{request}
-}
-
-relationship ManyToOne {
-	Status to Request{requestStatus(name)}
-    Status to RequestAssignment{status(name)}
 }
 
 

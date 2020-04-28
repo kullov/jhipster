@@ -1,0 +1,70 @@
+{
+    "name": "Request",
+    "fields": [
+        {
+            "fieldName": "position",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dateCreated",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "registerRequest",
+            "otherEntityRelationshipName": "requestRegister",
+            "relationshipName": "registerRequest"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "ability",
+            "otherEntityRelationshipName": "request",
+            "relationshipName": "requestAbility",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "organization",
+            "otherEntityRelationshipName": "request",
+            "relationshipName": "organizationRequest",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "status",
+            "otherEntityRelationshipName": "request",
+            "relationshipName": "requestStatus",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200428092700",
+    "entityTableName": "request",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

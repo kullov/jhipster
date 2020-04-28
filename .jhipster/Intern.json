@@ -1,0 +1,93 @@
+{
+    "name": "Intern",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateOfBirth",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "joinDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "className",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "avatar",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "password",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phone",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "registerRequest",
+            "otherEntityRelationshipName": "internRegister",
+            "relationshipName": "registerRequest"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "requestAssignment",
+            "otherEntityRelationshipName": "internRequestAssignment",
+            "relationshipName": "requestAssignment"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "ability",
+            "otherEntityRelationshipName": "intern",
+            "relationshipName": "internAbility",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "organization",
+            "otherEntityRelationshipName": "intern",
+            "relationshipName": "organizationIntern",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200428092200",
+    "entityTableName": "intern",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

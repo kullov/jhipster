@@ -1,0 +1,28 @@
+{
+    "name": "AbilityCategory",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "ability",
+            "otherEntityRelationshipName": "type",
+            "relationshipName": "abilityType"
+        }
+    ],
+    "changelogDate": "20200428092800",
+    "entityTableName": "ability_category",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

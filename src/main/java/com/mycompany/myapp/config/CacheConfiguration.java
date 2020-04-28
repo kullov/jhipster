@@ -44,6 +44,30 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".authorities");
             createCache(cm, com.mycompany.myapp.domain.PersistentToken.class.getName());
             createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".persistentTokens");
+            createCache(cm, com.mycompany.myapp.domain.Organization.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Organization.class.getName() + ".requests");
+            createCache(cm, com.mycompany.myapp.domain.Organization.class.getName() + ".interns");
+            createCache(cm, com.mycompany.myapp.domain.Organization.class.getName() + ".requestAssignments");
+            createCache(cm, com.mycompany.myapp.domain.Intern.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Intern.class.getName() + ".registerRequests");
+            createCache(cm, com.mycompany.myapp.domain.Intern.class.getName() + ".requestAssignments");
+            createCache(cm, com.mycompany.myapp.domain.Intern.class.getName() + ".internAbilities");
+            createCache(cm, com.mycompany.myapp.domain.Teacher.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Ability.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Ability.class.getName() + ".interns");
+            createCache(cm, com.mycompany.myapp.domain.Ability.class.getName() + ".requests");
+            createCache(cm, com.mycompany.myapp.domain.RegisterRequest.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.RequestAssignment.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.RequestAssignment.class.getName() + ".statuses");
+            createCache(cm, com.mycompany.myapp.domain.Request.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Request.class.getName() + ".registerRequests");
+            createCache(cm, com.mycompany.myapp.domain.Request.class.getName() + ".requestAbilities");
+            createCache(cm, com.mycompany.myapp.domain.Request.class.getName() + ".requestStatuses");
+            createCache(cm, com.mycompany.myapp.domain.AbilityCategory.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.AbilityCategory.class.getName() + ".abilityTypes");
+            createCache(cm, com.mycompany.myapp.domain.Status.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Status.class.getName() + ".requests");
+            createCache(cm, com.mycompany.myapp.domain.Status.class.getName() + ".requestAssignments");
             // jhipster-needle-ehcache-add-entry
         };
     }

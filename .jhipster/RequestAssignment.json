@@ -1,0 +1,51 @@
+{
+    "name": "RequestAssignment",
+    "fields": [
+        {
+            "fieldName": "startDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "dateCreated",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "intern",
+            "otherEntityRelationshipName": "requestAssignment",
+            "relationshipName": "internRequestAssignment",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "organization",
+            "otherEntityRelationshipName": "requestAssignment",
+            "relationshipName": "organizationRequestAssignment",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "status",
+            "otherEntityRelationshipName": "requestAssignment",
+            "relationshipName": "status",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200428092600",
+    "entityTableName": "request_assignment",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,44 @@
+{
+    "name": "RegisterRequest",
+    "fields": [
+        {
+            "fieldName": "dateCreated",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "intern",
+            "otherEntityRelationshipName": "registerRequest",
+            "relationshipName": "internRegister",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "request",
+            "otherEntityRelationshipName": "registerRequest",
+            "relationshipName": "requestRegister",
+            "otherEntityField": "position"
+        }
+    ],
+    "changelogDate": "20200428092500",
+    "entityTableName": "register_request",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
