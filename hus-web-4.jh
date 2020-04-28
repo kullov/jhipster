@@ -1,0 +1,97 @@
+
+
+entity Organization {
+	employeeCount Integer,
+	grossRevenue String,
+	name String,
+	taxNumber String,
+	password String,
+	email String,
+	contact String,
+	description String,
+	address String
+}
+
+entity Intern {
+	code Integer,
+    firstName String,
+    lastName String,
+    dateOfBirth Instant,
+    joinDate Instant,
+    className String,
+    avatar String,
+    password String,
+    email String,
+    phone Integer,
+    description String,
+    address String
+}
+
+entity Teacher {
+	name String,
+    className String,
+    contact Integer,
+    password String,
+    email String,
+    address String
+}
+
+entity Ability {
+	name String,
+    description String
+}
+
+entity RegisterRequest {
+	dateCreated ZonedDateTime,
+    startDate Instant,
+    endDate Instant
+}
+
+entity RequestAssignment {
+	startDate Instant,
+    endDate Instant,
+    dateCreated ZonedDateTime
+}
+
+entity Request {
+    position String,
+    amount Integer,
+    dateCreated ZonedDateTime,
+    status Integer,
+    description String,
+    type String
+}
+
+entity AbilityCategory {
+	name String
+}
+
+entity Status {
+	name String
+}
+
+relationship OneToMany {
+	Organization to Request{organization(name)}
+    Intern to RegisterRequest{internRegister(code)}
+    Request to RegisterRequest{requestRegister(position)}
+    Organization to Intern{organization}
+    AbilityCategory{abilityType(name)} to Ability{type(name)}
+    Intern to RequestAssignment{intern(code)}
+    Organization to RequestAssignment{organization(name)}
+}
+
+relationship ManyToMany {
+	Intern{internAbility(name)} to Ability{intern}
+    Request{requestAbility(name)} to Ability{request}
+}
+
+relationship ManyToOne {
+	Status to Request{requestStatus(name)}
+    Status to RequestAssignment{status(name)}
+}
+
+
+paginate Request with pagination
+dto * with mapstruct
+service all with serviceImpl
+
